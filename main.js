@@ -23,25 +23,4 @@ $(document).ready(function(){
 	  }
 	});
   });
-
-  $('#delete').submit(function(e) {
-	e.preventDefault();
-	let url = 'https://api.sheety.co/8647c1294e14cf39f72566bf52df77ba/signupForm/emails/2';
-		fetch(url, {
-		method: 'DELETE',
-		})
-		.then((response) => response.json())
-		.then(() => {
-		console.log('Object deleted');
-		});
-	  success: function() {
-		$('#delete-success').show();
-		$('#delete').hide();
-	  },
-	  error: function(xhr, res, text) {
-		alert('There was a problem deleting.');
-	  }
-	});
-  });
-
 });
